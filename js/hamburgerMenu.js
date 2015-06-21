@@ -1,6 +1,6 @@
 ﻿/*
  * hamburgarMenu 0.0.1 - A Jquery mobile  menu
- * Homepage: www.articlage.com/adrianillo/article/hamburgarMenu
+ * Homepage: https://www.articlage.com/adrianillo/article/HamburgerMenu
  *
  * Author:      Adrianillo
  * Twitter:     @adrianillo
