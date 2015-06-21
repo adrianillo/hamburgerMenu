@@ -1,0 +1,98 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css/hamburger.css" rel="stylesheet" >
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
+
+    <script>
+
+        $( document ).ready(function() {
+
+
+
+            $("#hamburgerMenu").hamburgerMenu({
+                        mainContent: 'mainContent',
+                        onClickHamburgerMenu: function (op, o) {
+
+                        }
+                    }, [
+                        {"id":"Brain","href":"index.html","text":"Pinky"},
+                        {"id":"Spongebob","href":"Spongebob.html","text":"Sponge Bob"},
+                        {"id":"Ghostbusters","href":"Ghostbusters.html","text":"Ghostbusters"},
+                        {"id":"fraggle","href":"other.html","text":"Fraggle rock"}
+                    ]
+            );
+
+        });
+    </script>
+
+    <style>
+        body{
+            margin-left: 0px;
+        }
+        #mainContent
+        {
+            margin-top: 60px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="hamburgerMenu"></div>
+<div id="mainContent">
+
+    <h1>Ghostbusters</h1>
+
+    <p>
+        Ghostbusters...<br>
+        If there's somethin' strange in your neighborhood<br>
+        Who ya gonna call (ghostbusters)<br>
+        If it's somethin' weird an it won't look good<br>
+        Who ya gonna call (ghostbusters)<br>
+
+        I ain't afraid a no ghost<br>
+        I ain't afraid a no ghost<br>
+        If you're seein' things runnin' thru your head<br>
+        Who can you call (ghostbusters)<br>
+        An' invisible man sleepin' in your bed<br>
+        Oh who ya gonna call (ghostbusters)<br>
+        I ain't afraid a no ghost<br>
+        I ain't afraid a no ghost<br>
+        Who ya gonna call (ghostbusters)<br>
+        If you're all alone pick up the phone<br>
+        An call (ghostbusters)<br>
+
+        I ain't afraid a no ghost<br>
+        I hear it likes the girls<br>
+        I ain't afraid a no ghost<br>
+        Who you gonna call (ghostbusters)<br>
+        Mm... if you've had a dose<br>
+        Of a freaky ghost baby<br>
+        You better call ghostbusters<br>
+        Bustin' makes me feel good<br>
+        I ain't afraid a no ghosts<br>
+
+        Don't get caught alone oh no... ghostbuster<br>
+        When he comes through your door<br>
+        Unless you've just got some more<br>
+        I think you better call ghostbusters<br>
+        Ooh... who you gonna call (ghostbusters)<br>
+        Who you gonna call (ghostbusters)<br>
+        Ah, I think you better call (ghostbusters)<br>
+
+        I can't hear you... (ghostbusters)<br>
+        Who you gonna call (ghostbusters)<br>
+        Louder ghostbusters<br>
+        Who you gonna call (ghostbusters)<br>
+        Who you can call ghostbusters...<br>
+    </p>
+
+
+
+</div>
+
+</body>
+</html>

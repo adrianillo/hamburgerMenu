@@ -1,0 +1,115 @@
+#headerHamburger {
+    position: fixed;
+    padding: 10px;
+    background-color: #297CB7;
+    box-shadow: 0px 2px 2px 0px #9f9fa5;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    top:0;
+    background: #466FB2;
+    background: -webkit-linear-gradient(top, #466FB2, #3758A5);
+    background: -moz-linear-gradient(top, #466fb2, #3758a5);
+    background: -o-linear-gradient(top, #466fb2, #3758a5);
+    background: -ms-linear-gradient(top, #466fb2, #3758a5);
+    background: linear-gradient(to bottom,#5BABE5,#297CB7 36px,#297CB7);
+}
+
+.hamburgerActive:before {
+
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    border-radius: 2px 2px 2px 2px;
+    -webkit-transform: rotate(45deg);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    height: 27px;
+    width:3px;
+}
+.hamburgerActive:after
+{
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    border-radius: 2px 2px 2px 2px;
+    -webkit-transform: rotate(-45deg);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    height: 27px;
+    width: 3px;
+}
+.hamburgerActive div {
+    display:none;
+}
+
+.hamburgerNoActive div {
+    display:block;
+}
+
+#hamburgerBtn {
+    border: 1px solid #286E9C;
+    padding: 3px 4px 3px 4px;
+    border-radius: 3px 3px 3px 3px;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: #466FB2;
+    background: -webkit-linear-gradient(top, #466FB2, #3758A5);
+    background: -moz-linear-gradient(top, #466fb2, #3758a5);
+    background: -o-linear-gradient(top, #466fb2, #3758a5);
+    background: -ms-linear-gradient(top, #466fb2, #3758a5);
+    background: linear-gradient(to bottom,#5BABE5,#297CB7 36px,#297CB7);
+}
+
+
+
+#hamburgerBtn div {
+    background-color: white;
+    border: 1px solid #eaeeec;
+    height: 2px;
+    width: 92%;
+    margin-top: 3px;
+    border-radius: 2px 2px 2px 2px;
+}
+
+#menuHamburger.menuHamburger {
+    margin-left:-75%;
+    left: 0px;
+    top: 52px;
+    position: fixed;
+    width: 75%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #3D3C3C;
+    background: -webkit-linear-gradient(top, #3D3C3C, #1B1B1B);
+    background: -moz-linear-gradient(top, #3D3C3C, #1B1B1B);
+    background: -o-linear-gradient(top, #3D3C3C, #1B1B1B );
+    background: -ms-linear-gradient(top, #3D3C3C, #1B1B1B);
+    background: linear-gradient(to bottom, #3D3C3C, #1B1B1B);
+}
+
+#menuHamburger.menuHamburger ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menuHamburger.menuHamburger  li {
+    font-weight: bold;
+    padding: 13px;
+    border-bottom: 1px solid #1A1A1A;
+    border-top: 1px solid #494949;
+}
+
+#menuHamburger.menuHamburger li a {
+    color: white;
+    text-decoration: none;
+    display: table-row-group;
+    padding-right: 70%;
+}
+

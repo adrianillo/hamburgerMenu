@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css/hamburger.css" rel="stylesheet" >
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
+
+    <script>
+
+        $( document ).ready(function() {
+
+            $("#hamburgerMenu").hamburgerMenu({
+                        mainContent: 'mainContent',
+                        onClickHamburgerMenu: function (op, o) {
+
+                        }
+                    }, [
+                        {"id":"Brain","href":"index.html","text":"Pinky"},
+                        {"id":"Spongebob","href":"Spongebob.html","text":"Sponge Bob"},
+                        {"id":"Ghostbusters","href":"Ghostbusters.html","text":"Ghostbusters"},
+                        {"id":"fraggle","href":"other.html","text":"Fraggle rock"}
+                    ]
+            );
+        });
+
+    </script>
+
+    <style>
+        body{
+            margin-left: 0px;
+        }
+        #mainContent
+        {
+            margin-top: 60px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="hamburgerMenu"></div>
+
+<div id="mainContent">
+
+    <h1>Pinky and the Brain</h1>
+    <p>
+        They're Pinky and the Brain<br>
+        Yes, Pinky and the Brain<br>
+        One is a genius, the other's other insane<br>
+        They're laboratory mice<br>
+        Their genes have been spliced<br>
+        They're Pinky, they're Pinky and the Brain<br>
+        Brain, Brain, Brain, Brain, Brain, Brain, Brain, Brain</p>
+    <p>
+        Before each night is done<br>
+        Their plan will be unfurled<br>
+        By the dawning of the sun<br>
+        They'll take over the world</p>
+    <p>
+        Before each night is done<br>
+        Their plan will be unfurled<br>
+        By the dawning of the sun<br>
+        They'll take over the world</p>
+    <p>
+        They're Pinky and the Brain<br>
+        Yes, Pinky and the Brain<br>
+        Their twilight campaign is easy to explain<br>
+        To prove their mousy worth<br>
+        They'll overthrow the earth<br>
+        They're Pinky, they're Pinky and the Brain<br>
+        Brain, Brain, Brain, Brain, Brain, Brain, Brain</p>
+
+
+</div>
+
+</body>
+</html>

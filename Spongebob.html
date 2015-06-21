@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css/hamburger.css" rel="stylesheet" >
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/hamburgerMenu.js"></script>
+
+    <script>
+
+        $( document ).ready(function() {
+
+
+
+            $("#hamburgerMenu").hamburgerMenu({
+                        mainContent: 'mainContent',
+                        onClickHamburgerMenu: function (op, o) {
+
+                        }
+                    }, [
+                        {"id":"Brain","href":"index.html","text":"Pinky"},
+                        {"id":"Spongebob","href":"Spongebob.html","text":"Sponge Bob"},
+                        {"id":"Ghostbusters","href":"Ghostbusters.html","text":"Ghostbusters"},
+                        {"id":"fraggle","href":"other.html","text":"Fraggle rock"}
+                    ]
+            );
+
+        });
+    </script>
+
+    <style>
+        body{
+            margin-left: 0px;
+        }
+        #mainContent
+        {
+            margin-top: 60px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="hamburgerMenu"></div>
+<div id="mainContent">
+
+    <h1>Sponge Bob</h1>
+
+    <p>
+        Who lives in a pineapple under the sea?<br>
+        "Spongebob Squarepants"<br>
+        Absorbant and yellow and porous is he!<br>
+        "Spongebob Squarepants"<br>
+        If nautical nonsense be something you wish<br>
+        "Spongebob Squarepants"<br>
+        Then drop on the deck and flop like a fish!<br>
+        "Spongebob Squarepants"<br>
+        READY?<br>
+        Spongebob Squarepants<br>
+        Spongebob Squarepants<br>
+        Spongebob Squarepants<br>
+    </p>
+
+
+
+</div>
+
+</body>
+</html>
