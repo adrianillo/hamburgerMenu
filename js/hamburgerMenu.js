@@ -20,31 +20,40 @@ jQuery.fn.extend({
             url:null,
             urlType: 'post',
             urlCache:false,
-            urlParam:''
+            urlParam:'',
+            position:'left',
+            fromTo:'leftRight'
         };
         if (settings){$.extend(this.config, settings);}
 
-
         this.render= function(menuList, self)
         {
-            var html='<header id="headerHamburger" data-role="header">';
-            html+='<div id="hamburgerBtn" class="hide">';
-            html+='<div></div>';
-            html+='<div></div>';
-            html+='<div></div>';
-            html+='</div>';
-            html+='</header>';
-            html+='<nav id="menuHamburger" class="menuHamburger hide">';
-            html+='<ul>';
+            var header=$('<header>',{id:'headerHamburger',"data-role":'header'});
+            if(this.config.position=='right'){
+                header.addClass("rightPosition");
+            }
+            var containerBtn=$('<div>',{id:'hamburgerBtn'}).addClass("hide");
+            containerBtn.append($('<div>'));
+            containerBtn.append($('<div>'));
+            containerBtn.append($('<div>'));
+            header.append(containerBtn);
+            var nav=$('<nav>',{id:'menuHamburger'}).addClass("menuHamburger").addClass("hide");
+            var ul=$('<ul>');
+
+            if(this.config.fromTo=="rightLeft")
+            {
+                nav.addClass("rightSide");
+            }
 
             $.each(menuList, function( index, value ) {
 
-                html+='<li id="'+(value.id!=null?value.id:'')+'"><a href="'+(value.href!=null?value.href:'#')+'">'+(value.text!=null?value.text:'')+'</a></li>';
+                var li=$('<li>',{id:(value.id!=null?value.id:'')});
+                var a=$('<a>',{href:(value.href!=null?value.href:'#')}).text((value.text!=null?value.text:''));
+                ul.append(li.append(a));
             });
-
-            html+='</ul>';
-            html+='</nav>';
-            $(self).html(html);
+            nav.append(ul);
+            $(self).append(header);
+            $(self).append(nav);
 
             $(self).off('click','#menuHamburger li');
             $(self).on('click','#menuHamburger li',this, function (e) {
@@ -90,15 +99,22 @@ jQuery.fn.extend({
                     animateMode = 'easeOutExpo';
                 }
             }
+            var animateSideMenuHamburger={"marginLeft": ["0", animateMode]};
+            var animateSideMainContent={ "marginLeft": ["75%", animateMode] };
+            if(this.config.fromTo=="rightLeft")
+            {
+                 animateSideMenuHamburger={"marginRight": ["0", animateMode]};
+                 animateSideMainContent={ "marginLeft": ["-75%", animateMode] };
+            }
 
-            $(mainContent).animate({ "marginLeft": ["75%", animateMode] }, {
+            $(mainContent).animate(animateSideMainContent, {
                 duration: 700,
                 complete: function () {
 
                 }
             });
 
-            $("#menuHamburger").animate({"marginLeft": ["0", animateMode]}, {
+            $("#menuHamburger").animate(animateSideMenuHamburger, {
                 duration: 700,
                 complete: function () {
                     $("#hamburgerBtn").addClass("hamburgerActive");
@@ -119,7 +135,16 @@ jQuery.fn.extend({
                     animateMode = 'easeOutExpo';
                 }
             }
-            $(mainContent).animate({"marginLeft": ["4", animateMode]}, {
+
+            var animateSideMenuHamburger={ "marginLeft": ["-75%", animateMode] };
+            var animateSideMainContent={"marginLeft": ["6", animateMode]};
+            if(this.config.fromTo=="rightLeft")
+            {
+                 animateSideMenuHamburger={ "marginRight": ["-75%", animateMode] };
+                 animateSideMainContent={"marginLeft": ["6", animateMode]};
+            }
+
+            $(mainContent).animate(animateSideMainContent, {
                     duration: 700,
                     complete: function () {
 
@@ -129,7 +154,7 @@ jQuery.fn.extend({
                     }
             });
 
-            $("#menuHamburger").animate({ "marginLeft": ["-75%", animateMode] }, {
+            $("#menuHamburger").animate(animateSideMenuHamburger, {
                 duration: 700,
                 complete: function () {
                 }

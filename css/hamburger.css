@@ -113,3 +113,13 @@
     padding-right: 70%;
 }
 
+.rightPosition #hamburgerBtn
+{
+    float: right;
+}
+.rightSide
+{
+    margin-right:-75%;
+    right: 0;
+    left: auto !important;
+}
