@@ -39,7 +39,7 @@ jQuery.fn.extend({
             header.append(containerBtn);
             var nav=$('<nav>',{id:'menuHamburger'}).addClass("menuHamburger").addClass("hide");
             var ul=$('<ul>');
-
+            ul.height($(window).height());
             if(this.config.fromTo=="rightLeft")
             {
                 nav.addClass("rightSide");
@@ -89,9 +89,9 @@ jQuery.fn.extend({
             var contentWidth = $(mainContent).width();
             $(mainContent).css('width', contentWidth);
 
-            $('body').on('touchmove',this,function (e) {
-                e.preventDefault()
-            });
+            $('body').addClass('noScroll');
+
+
 
             var animateMode='linear';
             if($.easing) {
@@ -127,7 +127,7 @@ jQuery.fn.extend({
         this.hideMenuHamburger = function(e)
         {
             var mainContent= '#'+e.data.config.mainContent;
-            $('body').off('touchmove');
+            $('body').removeClass('noScroll');
 
             var animateMode='linear';
             if($.easing) {
