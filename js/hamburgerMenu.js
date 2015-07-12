@@ -28,6 +28,9 @@ jQuery.fn.extend({
 
         this.render= function(menuList, self)
         {
+            var me=this;
+            this.config.running=false;
+            this.config.marginTopContent= parseInt( $(mainContent).css("margin-top"));
             var header=$('<header>',{id:'headerHamburger',"data-role":'header'});
             if(this.config.position=='right'){
                 header.addClass("rightPosition");
@@ -44,6 +47,13 @@ jQuery.fn.extend({
             {
                 nav.addClass("rightSide");
             }
+
+            if(this.config.fromTo=="topDown")
+            {
+                ul.height('0px');
+                nav.addClass("topSide");
+            }
+
 
             $.each(menuList, function( index, value ) {
 
@@ -66,7 +76,9 @@ jQuery.fn.extend({
             $(self).off('click','#hamburgerBtn');
             $(self).on('click','#hamburgerBtn',this,function (e) {
                 if(!$(this).hasClass('hamburgerActive')) {
-                    e.data.onClickAmburger(e);
+                    if(!me.config.running) {
+                        e.data.onClickAmburger(e);
+                    }
                 }
             });
 
@@ -85,14 +97,11 @@ jQuery.fn.extend({
 
         this.onClickAmburger = function(e)
         {
+            this.config.running=true;
             var mainContent= '#'+e.data.config.mainContent;
             var contentWidth = $(mainContent).width();
             $(mainContent).css('width', contentWidth);
-
             $('body').addClass('noScroll');
-
-
-
             var animateMode='linear';
             if($.easing) {
                 if ($.easing.easeOutExpo) {
@@ -106,21 +115,50 @@ jQuery.fn.extend({
                  animateSideMenuHamburger={"marginRight": ["0", animateMode]};
                  animateSideMainContent={ "marginLeft": ["-75%", animateMode] };
             }
+            var me=this;
+            if(this.config.fromTo=="topDown")
+            {
+                var offsetMenu= $(window).height()*0.7;
 
-            $(mainContent).animate(animateSideMainContent, {
-                duration: 700,
-                complete: function () {
-
+                var heightUl= $("#menuHamburger ul li").length*$("#menuHamburger ul li").outerHeight()+10;
+                if(heightUl>offsetMenu) {
+                    heightUl = offsetMenu;
                 }
-            });
+                var offsetContent= heightUl+this.config.marginTopContent;
+                $("#menuHamburger ul").animate({"height": [heightUl+"px", animateMode]}, {
+                    duration: 700,
+                    complete: function () {
+                        $("#hamburgerBtn").addClass("hamburgerActive");
+                        $("#hamburgerBtn").removeClass("hamburgerNoActive");
+                        me.config.running=false;
+                    }
+                });
 
-            $("#menuHamburger").animate(animateSideMenuHamburger, {
-                duration: 700,
-                complete: function () {
-                    $("#hamburgerBtn").addClass("hamburgerActive");
-                    $("#hamburgerBtn").removeClass("hamburgerNoActive");
-                }
-            });
+                $(mainContent).animate({"margin-top": [offsetContent+"px", animateMode]}, {
+                    duration: 700,
+                    complete: function () {
+
+                    }
+                });
+            }
+            else {
+
+                $("#menuHamburger").animate(animateSideMenuHamburger, {
+                    duration: 700,
+                    complete: function () {
+                        $("#hamburgerBtn").addClass("hamburgerActive");
+                        $("#hamburgerBtn").removeClass("hamburgerNoActive");
+                        me.config.running=false;
+                    }
+                });
+
+                $(mainContent).animate(animateSideMainContent, {
+                    duration: 700,
+                    complete: function () {
+
+                    }
+                });
+            }
 
 
         };
@@ -144,7 +182,32 @@ jQuery.fn.extend({
                  animateSideMainContent={"marginLeft": ["6", animateMode]};
             }
 
-            $(mainContent).animate(animateSideMainContent, {
+            if(this.config.fromTo=="topDown")
+            {
+                $("#menuHamburger ul").animate({"height": ["0px", animateMode]}, {
+                    duration: 700,
+                    complete: function () {
+                        $("#hamburgerBtn").removeClass("hamburgerActive");
+                        $("#hamburgerBtn").addClass("hamburgerNoActive");
+                    }
+                });
+
+                $(mainContent).animate({"margin-top": [this.config.marginTopContent+"px", animateMode]}, {
+                    duration: 700,
+                    complete: function () {
+
+                    }
+                });
+            }
+            else {
+
+                $("#menuHamburger").animate(animateSideMenuHamburger, {
+                    duration: 700,
+                    complete: function () {
+                    }
+                });
+
+                $(mainContent).animate(animateSideMainContent, {
                     duration: 700,
                     complete: function () {
 
@@ -152,13 +215,8 @@ jQuery.fn.extend({
                         $("#hamburgerBtn").removeClass("hamburgerActive");
                         $("#hamburgerBtn").addClass("hamburgerNoActive");
                     }
-            });
-
-            $("#menuHamburger").animate(animateSideMenuHamburger, {
-                duration: 700,
-                complete: function () {
-                }
-            });
+                });
+            }
         };
 
 
