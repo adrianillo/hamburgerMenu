@@ -30,7 +30,7 @@ jQuery.fn.extend({
         {
             var me=this;
             this.config.running=false;
-            this.config.marginTopContent= parseInt( $(mainContent).css("margin-top"));
+            this.config.marginTopContent= parseInt( $(this.config.mainContent).css("margin-top"));
             var header=$('<header>',{id:'headerHamburger',"data-role":'header'});
             if(this.config.position=='right'){
                 header.addClass("rightPosition");
