@@ -13,15 +13,22 @@
 	</tbody>
 </table>
 
-<p>&nbsp;</p>
-
-<p><span style="font-family:verdana,geneva,sans-serif; font-size:16px">It is very easy to be used.</span><span style="font-size:16px">&nbsp;Just add the following element to your HTML code:</span></p>
-
-<div><div id="highlighter_663603" class="syntaxhighlighter  xml"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"hamburgerMenu"</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
-
-<p><span style="font-size:16px"><span style="font-family:verdana,geneva,sans-serif">And run the following javascript:</span></span></p>
-
-<div><div id="highlighter_727657" class="syntaxhighlighter  jscript"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="jscript plain">$(</code><code class="jscript string">"#hamburgerMenu"</code><code class="jscript plain">).hamburgerMenu({</code></div><div class="line number2 index1 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">mainContent: </code><code class="jscript string">'mainContent'</code><code class="jscript plain">,</code></div><div class="line number3 index2 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number4 index3 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">}, [</code></div><div class="line number5 index4 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">{</code><code class="jscript string">"id"</code><code class="jscript plain">:</code><code class="jscript string">"Brain"</code><code class="jscript plain">,</code><code class="jscript string">"href"</code><code class="jscript plain">:</code><code class="jscript string">"index.html"</code><code class="jscript plain">,</code><code class="jscript string">"text"</code><code class="jscript plain">:</code><code class="jscript string">"Pinky"</code><code class="jscript plain">},</code></div><div class="line number6 index5 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">{</code><code class="jscript string">"id"</code><code class="jscript plain">:</code><code class="jscript string">"Spongebob"</code><code class="jscript plain">,</code><code class="jscript string">"href"</code><code class="jscript plain">:</code><code class="jscript string">"Spongebob.html"</code><code class="jscript plain">,</code><code class="jscript string">"text"</code><code class="jscript plain">:</code><code class="jscript string">"Sponge Bob"</code><code class="jscript plain">},</code></div><div class="line number7 index6 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">{</code><code class="jscript string">"id"</code><code class="jscript plain">:</code><code class="jscript string">"Ghostbusters"</code><code class="jscript plain">,</code><code class="jscript string">"href"</code><code class="jscript plain">:</code><code class="jscript string">"Ghostbusters.html"</code><code class="jscript plain">,</code><code class="jscript string">"text"</code><code class="jscript plain">:</code><code class="jscript string">"Ghostbusters"</code><code class="jscript plain">},</code></div><div class="line number8 index7 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">{</code><code class="jscript string">"id"</code><code class="jscript plain">:</code><code class="jscript string">"fraggle"</code><code class="jscript plain">,</code><code class="jscript string">"href"</code><code class="jscript plain">:</code><code class="jscript string">"other.html"</code><code class="jscript plain">,</code><code class="jscript string">"text"</code><code class="jscript plain">:</code><code class="jscript string">"Fraggle rock"</code><code class="jscript plain">}</code></div><div class="line number9 index8 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">]</code></div><div class="line number10 index9 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">);</code></div></div></td></tr></tbody></table></div></div>
-
-<p>&nbsp;</p>
 </div>
+
+It is very easy to be used. Just add the following element to your HTML code:
+```html
+<div id="hamburgerMenu"></div>
+```
+And run the following javascript:
+```javascript
+$("#hamburgerMenu").hamburgerMenu({
+			mainContent: 'mainContent',
+		   
+		}, [
+			{"id":"Brain","href":"index.html","text":"Pinky"},
+			{"id":"Spongebob","href":"Spongebob.html","text":"Sponge Bob"},
+			{"id":"Ghostbusters","href":"Ghostbusters.html","text":"Ghostbusters"},
+			{"id":"fraggle","href":"other.html","text":"Fraggle rock"}
+		]
+);
+```
