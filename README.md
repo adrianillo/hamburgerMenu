@@ -32,3 +32,15 @@ $("#hamburgerMenu").hamburgerMenu({
 		]
 );
 ```
+**mainContent**: It is the id of container that encapsulates the content of your page.
+
+```html
+<body>
+	<div id="hamburgerMenu"></div>
+	<div id="mainContent">
+		here is the content of yout page.
+	</div>
+</body>
+```
+
+**more info:** https://www.articlage.com/adrianillo/article/hamburgermenu
