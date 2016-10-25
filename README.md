@@ -44,3 +44,5 @@ $("#hamburgerMenu").hamburgerMenu({
 ```
 
 **more info:** https://www.articlage.com/adrianillo/article/hamburgermenu
+
+**demo:** http://adrianillo.name/articlage/hamburgerMenu/index.html
