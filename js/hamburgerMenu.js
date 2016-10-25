@@ -71,6 +71,7 @@ jQuery.fn.extend({
                     e.data.config.onClickHamburgerMenu(e);
                 }
                 e.data.hideMenuHamburger(e);
+                return false;
             });
 
             $(self).off('click','#hamburgerBtn');
@@ -91,8 +92,7 @@ jQuery.fn.extend({
             $(self).on('click','#hamburgerBtn.hamburgerActive',this,function (e) {
                 $("#hamburgerBtn").removeClass("hamburgerActive");
                 $("#hamburgerBtn").addClass("hamburgerNoActive");
-                e.data.hideMenuHamburger(e);
-                return false;
+                e.data.hideMenuHamburger(e);                
             });
         };
 
