@@ -92,6 +92,7 @@ jQuery.fn.extend({
                 $("#hamburgerBtn").removeClass("hamburgerActive");
                 $("#hamburgerBtn").addClass("hamburgerNoActive");
                 e.data.hideMenuHamburger(e);
+                return false;
             });
         };
 
