@@ -43,8 +43,8 @@ $("#hamburgerMenu").hamburgerMenu({
 </body>
 ```
 
-**More info:** [https://www.articlage.com/adrianillo/article/hamburgermenu](https://www.articlage.com/adrianillo/article/hamburgermenu target="_blank)
+**More info:** [https://www.articlage.com/adrianillo/article/hamburgermenu](https://www.articlage.com/adrianillo/article/hamburgermenu)
 
-**Demo:** [http://adrianillo.name/articlage/hamburgerMenu/index.html](http://adrianillo.name/articlage/hamburgerMenu/index.html target="_blank)
+**Demo:** [http://adrianillo.name/articlage/hamburgerMenu/index.html](http://adrianillo.name/articlage/hamburgerMenu/index.html)
 
 
