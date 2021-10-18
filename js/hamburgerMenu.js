@@ -71,7 +71,7 @@ jQuery.fn.extend({
                     e.data.config.onClickHamburgerMenu(e);
                 }
                 e.data.hideMenuHamburger(e);
-                return false;
+               // return false;
             });
 
             $(self).off('click','#hamburgerBtn');
